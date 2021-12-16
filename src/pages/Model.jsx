@@ -1,4 +1,4 @@
-import { Container, Flex, Image } from "@chakra-ui/react";
+import {  Flex,  } from "@chakra-ui/react";
 import { memo } from "react";
 import { Link } from "react-router-dom";
 import {
