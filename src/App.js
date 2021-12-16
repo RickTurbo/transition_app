@@ -1,12 +1,10 @@
-import logo from "./logo.svg";
-import "./App.css";
 import { BrowserRouter } from "react-router-dom/cjs/react-router-dom.min";
-import { Router } from "./router/Router";
+import { Routers } from "../src/router/Routers";
 
 function App() {
   return (
     <BrowserRouter>
-      <Router />
+      <Routers />
     </BrowserRouter>
   );
 }

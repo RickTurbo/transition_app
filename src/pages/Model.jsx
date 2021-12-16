@@ -1,5 +1,6 @@
-import { Box, Container, Flex, Image } from "@chakra-ui/react";
+import {  Container, Flex, Image, } from "@chakra-ui/react";
 import { memo } from "react";
+import { Link } from "react-router-dom";
 import { MotionBox, MotionFlex } from "../animations/variants";
 import Insigne from "../assets/Insigne.JPG";
 
@@ -39,7 +40,10 @@ export const Model = memo(() => {
       animate="visible"
     >
       <Container maxW="container.xl">
-        <Flex mt="20" justifyContent="center">
+        <Flex fontSize='2xl'>
+          <Link to='/'>back</Link>
+        </Flex>
+        <Flex  justifyContent="center">
           <MotionFlex variants={Name} fontSize="8xl" pt="20">
             <MotionBox variants={letter}>L</MotionBox>
             <MotionBox variants={letter}>o</MotionBox>

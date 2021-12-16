@@ -1,10 +1,15 @@
-import { Box, Container, Flex, Image, Text } from "@chakra-ui/react";
+import { Container, Flex, Text } from "@chakra-ui/react";
 import { memo, useCallback } from "react";
 import { useHistory } from "react-router-dom";
-import { MotionBox, MotionFlex, MotionImage } from "../animations/variants";
+import {
+  MotionBox,
+  MotionContainer,
+  MotionFlex,
+  MotionImage,
+} from "../animations/variants";
 import Insigne from "../assets/Insigne.JPG";
 
-const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9] };
+const transition = { duration: 0.6, ease: [0.43, 0.13, 0.23, 0.96] };
 
 export const Name = {
   hidden: {
@@ -42,9 +47,13 @@ export const Home = memo(() => {
       initial="hidden"
       animate="visible"
     >
-      <Container maxW="container.xl">
-        <Flex mt="20" justifyContent="space-between">
-          <MotionFlex variants={Name} fontSize="3xl">
+      <MotionContainer
+        maxW="container.xl"
+        exit={{ opacity: 0 }}
+        transition={transition}
+      >
+        <Flex pt="10" justifyContent="space-between">
+          <MotionFlex variants={Name} fontSize="2xl">
             <MotionBox variants={letter}>L</MotionBox>
             <MotionBox variants={letter}>o</MotionBox>
             <MotionBox variants={letter}>r</MotionBox>
@@ -64,21 +73,32 @@ export const Home = memo(() => {
           <Text>ssssssssssss</Text>
         </Flex>
         <Container maxW="sm">
-          <Flex mt="32" justifyContent="center" alignItems="center">
+          <MotionFlex
+            mt="32"
+            justifyContent="center"
+            alignItems="center"
+            overflow="hidden"
+          >
             <MotionImage
               width="524"
               height="450"
               src={Insigne}
               onClick={onClickModel}
               whileHover={{ scale: 1.1 }}
+              transition={transition}
             ></MotionImage>
-          </Flex>
-          <MotionFlex justifyContent="space-between" mt={6}>
+          </MotionFlex>
+          <MotionFlex
+            justifyContent="space-between"
+            mt={6}
+            exit={{ opacity: 0 }}
+            transition={transition}
+          >
             <MotionBox>222222222222</MotionBox>
             <MotionBox mb="20">4444444444444</MotionBox>
           </MotionFlex>
         </Container>
-      </Container>
+      </MotionContainer>
     </MotionBox>
   );
 });
