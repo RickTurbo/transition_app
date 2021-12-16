@@ -47,11 +47,7 @@ export const Home = memo(() => {
       initial="hidden"
       animate="visible"
     >
-      <MotionContainer
-        maxW="container.xl"
-        exit={{ opacity: 0 }}
-        transition={transition}
-      >
+      <MotionContainer maxW="container.xl">
         <Flex pt="10" justifyContent="space-between">
           <MotionFlex variants={Name} fontSize="2xl">
             <MotionBox variants={letter}>L</MotionBox>
